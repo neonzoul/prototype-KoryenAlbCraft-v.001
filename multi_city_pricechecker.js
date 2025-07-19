@@ -86,11 +86,16 @@ function displayPriceReport(itemData) {
             // Format price if it's a number
             if (typeof cityData.price === 'number') {
                 priceDisplay = `${cityData.price.toLocaleString()} silver`;
-                timeDisplay = `${cityData.hoursAgo} hours ago`;
+                const hoursLeft = 24 - cityData.hoursAgo;
+                if (hoursLeft > 0) {
+                    timeDisplay = `${hoursLeft} hours left`;
+                } else {
+                    timeDisplay = 'Expired';
+                }
             }
 
             console.log(
-                `City: ${city}  | Price: ${priceDisplay}  | Last Updated: ${timeDisplay}`
+                `City: ${city}  | Price: ${priceDisplay}  | Resets in: ${timeDisplay}`
             );
         }
     }
