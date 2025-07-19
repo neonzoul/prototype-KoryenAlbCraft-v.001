@@ -1,0 +1,11 @@
+# Ignore these files when building Docker image
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+node_modules
+*.log
+.DS_Store
+*.tmp
+*.temp

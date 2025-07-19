@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+    koryenalbcraft:
+        build: .
+        container_name: koryenalbcraft-app
+        ports:
+            - '3000:80' # Map local port 3000 to container port 80
+        restart: unless-stopped

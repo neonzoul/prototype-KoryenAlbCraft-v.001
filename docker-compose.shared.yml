@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+    koryenalbcraft-shared:
+        build: .
+        container_name: koryenalbcraft-shared
+        ports:
+            - '0.0.0.0:8080:80' # Try port 8080 - often less restricted
+        restart: unless-stopped
+        environment:
+            - NGINX_HOST=0.0.0.0
+            - NGINX_PORT=80

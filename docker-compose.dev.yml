@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    koryenalbcraft-dev:
+        image: nginx:alpine
+        container_name: koryenalbcraft-dev
+        ports:
+            - '3000:80'
+        volumes:
+            - ./index.html:/usr/share/nginx/html/index.html
+            - ./script.js:/usr/share/nginx/html/script.js
+            - ./style.css:/usr/share/nginx/html/style.css
+            - ./multi_city_pricechecker.js:/usr/share/nginx/html/multi_city_pricechecker.js
+        restart: unless-stopped

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+    koryenalbcraft-public:
+        build: .
+        container_name: koryenalbcraft-public
+        network_mode: 'host' # Use host networking to bypass firewall issues
+        restart: unless-stopped
+        environment:
+            - NGINX_HOST=0.0.0.0
+            - NGINX_PORT=3000
